@@ -62,43 +62,38 @@ export default function Calender() {
   const daysInMonth = generateDaysInMonth();
 
   return (
-    <div className="bg-white rounded-2xl px-6 py-3 flex flex-col justify-between shadow-md ">
-      <div className="flex items-center justify-between pb-1 sm:pb-0">
-        <h2 className="text-[17px] sm:text-[18px] font-semibold text-black">Calender</h2>
-        <button className="flex justify-center text-[12px] sm:text-[15px] items-center space-x-0 sm:space-x-1 rounded-lg font-semibold">
-          <span className="text-primary-color">View All</span>
-          <ChevronRightIcon className="text-black/30 mt-[2px] p-[2px]" style={{ fontSize: 18 }} />
-        </button>
+    <div className="bg-white rounded-md px-6 py-3 flex flex-col justify-center border border-gray-200">
+      <div className="flex">
+        <p className="text-[18px] sm:text-[20px] font-bold text-primary-color">Calender</p>
       </div>
-
-      {/* Calendar */}
-      <div className="bg-gray-100 rounded-md px-2 sm:px-3 pb-3 flex flex-col justify-start">
-        <div className="flex items-center justify-between py-2">
-          <h5 className="text-[12px] sm:text-[12px] lg:text-[13px] font-medium text-gray-900">
+      <div className="flex items-center justify-between py-3">
+          <p className="text-[15px] sm:text-[15px] lg:text-[15px] font-medium text-gray-900">
             {currentDate.format("MMMM YYYY")}
-          </h5>
-          <div className="flex">
+          </p>
+          <div className="flex space-x-2">
             <button
-              className="text-gray-500 hover:text-black/70 rounded transition-all hover:text-black"
+              className="text-gray-500 hover:text-black/70 rounded transition-all hover:text-black bg-gray-50"
               onClick={handlePrevMonth}
             >
               <ChevronLeftIcon style={{ fontSize: 15, margin: 5 }} />
             </button>
             <button
-              className="text-gray-500 hover:text-black/70 rounded transition-all hover:text-black"
+              className="text-gray-500 hover:text-black/70 rounded transition-all hover:text-black bg-gray-50"
               onClick={handleNextMonth}
             >
               <ChevronRightIcon style={{ fontSize: 15, margin: 5 }} />
             </button>
           </div>
-        </div>
-
+      </div>
+      {/* Calendar */}
+      <div className="bg-white rounded-md  pb-3 flex flex-col justify-center">
+        
         {/* Days of the Week Header */}
-        <div className="grid grid-cols-7 ">
+        <div className="grid grid-cols-7 space-x-2 ">
           {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((day) => (
             <div
               key={day}
-              className="text-center text-[8px] sm:text-[12px] lg:text-[14px] font-medium text-gray-500"
+              className="text-center text-[8px] sm:text-[15px] lg:text-[15px] font-medium text-gray-500"
             >
               {day}
             </div>
@@ -119,7 +114,7 @@ export default function Calender() {
               <button
                 key={day.toString()}
                 onClick={() => handleDayClick(day)}
-                className={`text-center text-[6px] sm:text-[8px] lg:text-[10px] mx-1 p-[4px] lg:mx-7 md:mx-4 xl:mx-10 sm:p-1   ${
+                className={`text-center text-[9px] sm:text-[12px] lg:text-[15px] mx-1 p-[4px] lg:mx-7 md:mx-4 xl:mx-10 sm:p-1   ${
                   isHighlighted
                     ? "border-[1px] border-black text-black rounded-full  font-bold "
                     : isSelected
@@ -133,24 +128,9 @@ export default function Calender() {
           })}
         </div>
     </div>
-
-
-      {/* No Upcoming Appointments */}
-      <div className="flex flex-col items-center justify-center w-full p-3 gap-y-[2px]">
-        <CalendarTodayOutlinedIcon
-          className="text-primary-color"
-          style={{ fontSize: 22, margin: 2 }}
-        />
-        <p className="text-[10px] text-center sm:text-xs text-gray-600 font-semibold">No upcoming appointments</p>
-      </div>
-
-      {/* Make Appointment Button */}
-      <div className="w-full">
-        <button className="w-full bg-primary-color rounded-md hover:bg-red-700 font-light text-white text-[15px] sm:text-[19px] py-[5px]  ">
-          Make an appointment
-        </button>
-      </div>
+    
     </div>
   );
 }
+
 

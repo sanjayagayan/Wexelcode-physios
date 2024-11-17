@@ -29,8 +29,8 @@ const menuItems = [
     icon: <HomeIcon className="w-4 h-4" />,
   },
   {
-    label: "Physios Profile",
-    href: "/physios",
+    label: "Patients",
+    href: "/patients",
     icon: <ChatIcon className="w-4 h-4" />,
   },
   {

@@ -69,8 +69,8 @@ const PatientList: React.FC<PatientListProps> = ({result}) => {
   };
 
   return (
-    <div className="min-h-screenn w-full  2xl:w-[70%] xl:w-[80%]">
-      <div className="mx-auto bg-white shadow-md rounded-lg p-4">
+    <div className="min-h-screenn w-full ">
+      <div className="mx-auto bg-white border border-gray-200  rounded-md p-4">
         <div className='flex justify-between items-center'>
             <h1 className="text-2xl font-semibold mb-4">Patient List</h1>
             <p className='flex justify-center items-center gap-x-2 text-[18px] font-semibold'>Today<IoIosArrowDown /></p>

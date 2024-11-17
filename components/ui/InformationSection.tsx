@@ -1,39 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 const InformationSection = () => {
-//   const [infoList, setInfoList] = useState<string[]>([]); 
-//   const [error, setError] = useState<string | null>(null); 
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const response = await fetch('https://your-backend-api-url.com/information'); 
-//         if (!response.ok) {
-//           throw new Error('Failed to fetch data');
-//         }
-//         const data = await response.json();
-//         setInfoList(data); 
-//       } catch (e) {
-//         // setError(e.message);
-//       }
-//     };
-    
-//     fetchData();
-//   }, []);
-    const infoList = [
-        "Physio's notes exercises",
-        "Recommendations",
-        "Blog posts"
-    ];
+    const infoList = {
+        physiosName: "Physios Name",
+        number: 5
+    };
 
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-md h-full ">
-      <h1 className="text-[18px] sm:text-2xl font-semibold mb-2 sm:mb-4">Information</h1>
-      <ul className="list-disc list-inside space-y-2">
-        {infoList.map((item, index) => (
-          <li key={index} className="text-gray-700 text-[13px] sm:text-2xl">{item}</li>
-        ))}
-      </ul>
+    <div className="bg-white p-6 rounded-md h-full space-y-3 border border-gray-200">
+      <p className="text-[12px] sm:text-[20px] font-medium mb-2 sm:mb-3">Welcome</p>
+      <p className="text-[14px] sm:text-[20px] font-semibold mb-2 sm:mb-3">{infoList.physiosName}</p>
+      <p className='text-[18px] sm:text-[24px] font-normal mb-2 sm:mb-3 flex gap-x-2'>You have <p className='text-primary-color font-semibold'>{infoList.number} </p>appointments today</p>
     </div>
   )
 }

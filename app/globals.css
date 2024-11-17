@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.pointer-events-none {
+  pointer-events: none;
+}
 
 .hide-scrollbar {
     scrollbar-width: none; 
@@ -11,4 +14,5 @@
 .hide-scrollbar::-webkit-scrollbar {
     display: none;
 }
+
 

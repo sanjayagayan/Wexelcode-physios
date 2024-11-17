@@ -20,8 +20,8 @@ export default async function RootLayout({
       <ReduxProvider>
         <html lang="en">
           <body className=" font-siliguri">
-            <ToastContainer theme="colored" />
-            {children}
+              <ToastContainer theme="colored" />
+              {children}
           </body>
         </html>
       </ReduxProvider>

@@ -7,7 +7,8 @@ type Props = {
 };
 const Appointments = ({ appointments }: Props) => {
   return (
-    <Grid
+    <div className="min-h-screen">
+        <Grid
       container
       spacing={{ xs: 2, md: 3 }}
       columns={{ xs: 4, sm: 8, md: 12 }}
@@ -18,6 +19,8 @@ const Appointments = ({ appointments }: Props) => {
         </Grid>
       ))}
     </Grid>
+    </div>
+    
   );
 };
 export default Appointments;
